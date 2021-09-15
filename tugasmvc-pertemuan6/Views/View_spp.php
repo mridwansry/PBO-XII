@@ -36,7 +36,7 @@ $GetSpp = $spp->GetData_All();
                 <td><?php echo $Get['nominal']; ?></td>
                 <td>
                     <a href="../Views/View_put_spp.php?id_spp=<?php echo base64_encode($Get['id_spp']) ?>">view</a>
-                    <a onclick="konfirmasi(<?php echo $Get['id_spp'] ?>)">Delete</a>
+                    <a onclick="konfirmasi('<?php echo base64_encode($Get['id_spp']) ?>')">Delete</a>
                 </td>
             </tr>
     <?php
@@ -46,8 +46,9 @@ $GetSpp = $spp->GetData_All();
 </table>
 <script>
     function konfirmasi(id_spp) {
+        var a = id_spp;
         if (window.confirm("Apakah anda ingin menghapus data ini?")) {
-            window.location.href = '../Config/Routes.php?function=delete_spp&id_spp=<?php echo base64_encode($Get['id_spp']) ?>';
+            window.location.href = '../Config/Routes.php?function=delete_spp&id_spp=' + a;
         };
     }
 </script>
