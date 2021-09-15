@@ -36,7 +36,7 @@ $GetKelas = $kelas->GetData_All();
                 <td><?php echo $Get['kompetensi_keahlian']; ?></td>
                 <td>
                     <a href="../Views/View_put_kelas.php?id_kelas=<?php echo base64_encode($Get['id_kelas']) ?>">view</a>
-                    <a onclick="konfirmasi(<?php echo $Get['id_kelas'] ?>)">Delete</a>
+                    <a onclick="konfirmasi('<?php echo base64_encode($Get['id_kelas']) ?>')">Delete</a>
                 </td>
             </tr>
     <?php
@@ -46,8 +46,9 @@ $GetKelas = $kelas->GetData_All();
 </table>
 <script>
     function konfirmasi(id_kelas) {
+        var a = id_kelas;
         if (window.confirm("Apakah anda ingin menghapus data ini?")) {
-            window.location.href = '../Config/Routes.php?function=delete_kelas&id_kelas=<?php echo base64_encode($Get['id_kelas']) ?>';
+            window.location.href = '../Config/Routes.php?function=delete_kelas&id_kelas=' + a;
         };
     }
 </script>
