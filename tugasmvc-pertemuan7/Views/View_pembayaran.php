@@ -48,7 +48,7 @@ $GetPembayaran = $pembayaran->GetData_All();
                 <td><?php echo $Get['jumlah_bayar']; ?></td>
                 <td>
                     <a href="../Views/View_put_pembayaran.php?id_pembayaran=<?php echo base64_encode($Get['id_pembayaran']) ?>"><img src="view.png" width="17"></a>
-                    <button onclick="konfirmasi(<?php echo $Get['id_pembayaran'] ?>)">Delete</button>
+                    <button onclick="konfirmasi('<?php echo base64_encode($Get['id_pembayaran']) ?>')">Delete</button>
                 </td>
             </tr>
     <?php
@@ -58,8 +58,9 @@ $GetPembayaran = $pembayaran->GetData_All();
 </table>
 <script>
     function konfirmasi(id_pembayaran) {
+        var a = id_pembayaran;
         if (window.confirm('apakah anda ingin menghapus data ini ?')) {
-            window.location.href = '../Config/Routes.php?function=delete_pembayaran&id_pembayaran=<?php echo base64_encode($Get['id_pembayaran']) ?>';
+            window.location.href = '../Config/Routes.php?function=delete_pembayaran&id_pembayaran=' + a;
         };
     }
 </script>
