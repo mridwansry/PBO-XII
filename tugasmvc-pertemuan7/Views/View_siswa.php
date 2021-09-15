@@ -45,7 +45,7 @@ $GetSiswa = $siswa->GetData_All();
                 <td><?php echo $Get['nominal']; ?></td>
                 <td>
                     <a href="../Views/View_put_siswa.php?nisn=<?php echo base64_encode($Get['nisn']) ?>"><img src="view.png" width="17"></a>
-                    <button onclick=" konfirmasi(<?php echo $Get['nisn'] ?>)">Delete</button>
+                    <button onclick="konfirmasi('<?php echo base64_encode($Get['nisn']) ?>')">Delete</button>
             </tr>
     <?php
         }
@@ -55,8 +55,9 @@ $GetSiswa = $siswa->GetData_All();
 
 <script>
     function konfirmasi(nisn) {
+        var a = nisn;
         if (window.confirm('apakah anda ingin menghapus data ini ?')) {
-            window.location.href = '../Config/Routes.php?function=delete_siswa&nisn=<?php echo base64_encode($Get['nisn']) ?>';
+            window.location.href = '../Config/Routes.php?function=delete_siswa&nisn=' + a;
         };
     }
 </script>
