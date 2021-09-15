@@ -40,7 +40,7 @@ $GetPetugas = $petugas->GetData_All();
                 <td><?php echo $Get['level']; ?></td>
                 <td>
                     <a href="../Views/View_put_petugas.php?id_petugas=<?php echo base64_encode($Get['id_petugas']) ?>"><img src="view.png" width="17"></a>
-                    <button onclick="konfirmasi('<?php echo $Get['id_petugas'] ?>')">Delete</button>
+                    <button onclick="konfirmasi('<?php echo base64_encode($Get['id_petugas']) ?>')">Delete</button>
                 </td>
             </tr>
     <?php
