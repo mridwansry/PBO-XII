@@ -6,9 +6,9 @@ class Database
 
 	// Property
 	var $host = "sql6.freesqldatabase.com";
-	var $uname = "sql6437646";
-	var $pass = "Y4IsVJ5Edg";
-	var $db = "sql6437646";
+	var $uname = "sql6441906";
+	var $pass = "ryXlQmuBq7";
+	var $db = "sql6441906";
 	var $connection;
 
 	// Method koneksi kedalam database
